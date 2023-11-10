@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">  
+    <title>Text To Speech in JavaScript | </title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  </head>
+  <body>
+    
+    <!-- aa -->
+    
+<!-- bb -->
+<!-- nn -->
+<div class="card">
+  <div class="wrapper">
+    <header>inggilzcha so'z kiriting  <a style="color: #040404; background-color: #fff; text-decoration: none;" href="{% url 'home' %}">aa</a></header>
+    <form action="" method="GET">
+      {% csrf_token %}
+      <div class="izlash">
+        <div class="group">
+      
+          <input name="q" value="{{ q }}" placeholder="Search" type="search" class="input">
+          <button class="btn" style="width:40px; height: 38px; margin-bottom: 9px; border-radius: 0px 10px;" type="submit">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+              <g>
+                  <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
+              </g>
+          </svg>
+          </button>
+      </div>
+        
+      </div>
+
+      <div>
+        <table style="width: 100%;  border: 1px solid black;
+        border-collapse: collapse; box-shadow: 1px 1px 1px 1px rgb(228, 227, 225); margin-bottom: 20px;" >
+          
+          <tr>
+            <th style=" border: 1px solid black;
+            border-collapse: collapse; ">Ingliz</th>
+            <th style=" border: 1px solid black;
+            border-collapse: collapse; ">O'zbek</th>
+         </tr>
+      {% if natija %}
+      {% for t in natija %}
+    
+          <tr>
+            <td style=" border: 1px solid black;
+            border-collapse: collapse;">{{ t.inglizcha }}</td>
+            <td style=" border: 1px solid black;
+            border-collapse: collapse; background-color: #edf6f6;">{{t.uzbekcha}}</td>
+          </tr>
+        
+        
+         {% endfor %}
+         {% endif %}
+        </table>
+      </div>
+      <div class="row">
+        <label> Text kirgizing va eshiting</label>
+        <textarea></textarea>
+        <div class="row">
+          <label>Qaysi tilda eshitasiz</label>
+          <div class="outer">
+            <select></select>
+           </div>
+        </div>
+        <button id="btn" type="submit">eshiting......<i class="fa-solid fa-volume-high"></i></button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+    
+    <script src="{% static 'script.js' %}"></script>
+
+  </body>
+</html>
